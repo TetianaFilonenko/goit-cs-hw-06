@@ -1,13 +1,14 @@
-# Python WebSocket and HTTP Server Application
+# Python Web and WebSocket Server with MongoDB
 
-This project is a simple web application that includes an HTTP server and a WebSocket server. The HTTP server serves static files, while the WebSocket server handles real-time messaging and stores messages in MongoDB.
+This project demonstrates a simple Python web application that uses both HTTP and WebSocket servers to manage real-time messaging, with data stored in a MongoDB database. The application uses Docker for containerization and Docker Compose to manage multiple services.
 
 ## Features
 
-- Serve static files (HTML, CSS, JS)
-- Real-time messaging via WebSocket
-- Store messages in MongoDB
-- Display previous messages upon connection
+- **HTTP Server**: Serves static files and handles form submissions.
+- **WebSocket Server**: Manages real-time messaging between clients.
+- **MongoDB**: Stores messages with timestamps.
+- **Docker**: Containerizes the application for easy deployment.
+- **Bootstrap**: Provides responsive design for the front-end.
 
 ## Requirements
 
@@ -23,7 +24,7 @@ git clone https://github.com/TetianaFilonenko/goit-cs-hw-06
 cd goit-cs-hw-06
 ```
 
-2. Build and start the services:
+2. Build and start the Docker containers:
 
 ```sh
 docker-compose up --build
@@ -34,3 +35,22 @@ docker-compose up --build
 ```
 http://localhost:3000
 ```
+
+## Services
+
+- **HTTP Server**: Runs on port `3000`.
+- **Socket Server**: Runs on port `5001`.
+- **MongoDB**: Runs on port `27017`.
+
+## Usage
+
+### Access the Application
+
+- Open your browser and go to `http://localhost:3000` to view the home page.
+- Navigate to `http://localhost:3000/message.html` to send a message.
+
+### Sending Messages
+
+- Fill out the form with your username and message.
+- Submit the form to send your message.
+- Messages will appear in real-time on all connected clients.
