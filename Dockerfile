@@ -6,4 +6,4 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "websocket_server.py"]
+CMD ["python", "main.py"]

@@ -1,22 +1,14 @@
 version: '3'
 services:
-  web:
+  app:
     build:
       context: .
-      dockerfile: Dockerfile.web
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
+      - "5001:5001"
     volumes:
       - .:/app
-    depends_on:
-      - socket
-
-  socket:
-    build:
-      context: .
-      dockerfile: Dockerfile.socket
-    ports:
-      - "5001:5001"
     depends_on:
       - mongo
 
